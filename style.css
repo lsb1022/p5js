@@ -1,38 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
+:root {
+  --pink: #f7c6d9;
+  --light-pink: #fdf0f5;
+  --text: #111;
+  --background: #fff;
+  --radius: 16px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #fff;
-  color: #111;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
 }
 
 header {
-  background-color: #f7c6d9;
+  background-color: var(--pink);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  border-bottom: 2px solid #e0a6bb;
 }
 
 header h1 {
-  font-size: 1.8rem;
+  font-size: 2rem;
+  font-weight: 600;
   margin: 0;
+  color: var(--text);
 }
 
 nav a {
-  margin-left: 1rem;
+  margin-left: 1.5rem;
   text-decoration: none;
-  color: #111;
+  color: var(--text);
   font-weight: 600;
+  transition: color 0.2s;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: #6d1a3b;
 }
 
-.gallery {
+main.gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
@@ -40,22 +59,43 @@ nav a:hover {
 }
 
 .artwork {
-  background: #fdf0f5;
-  border-radius: 12px;
+  background: var(--light-pink);
+  border-radius: var(--radius);
   padding: 1rem;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.artwork:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
 .artwork img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 12px;
   margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.artwork h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0.2rem;
+  color: #333;
+}
+
+.artwork p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
 }
 
 footer {
   text-align: center;
   padding: 1.5rem;
-  background-color: #f7c6d9;
+  background-color: var(--pink);
   font-size: 0.9rem;
+  color: var(--text);
+  border-top: 2px solid #e0a6bb;
 }
